@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="introduceBusqueda">Introduce un Cod. Postal</string>
+    <string name="search_icon">Buscar Tiendas</string>
+    <string name="user_icon">Panel de Control del usuario</string>
+    <string name="order_icon">Pedidos</string>
+    <string name="nick_label">Usuario</string>
+    <string name="password_label">Contraseña</string>
+    <string name="title_activity_login">Inicio de Sesión</string>
+    <string name="inicioSesion">Iniciar Sesión</string>
+    <string name="policiesJB" >Al Crear una cuenta, aceptas los Términos y Condiciones de Just Buy, sus Políticas de Privacidad y Políticas de Cookies</string>
+    <string name="register_label">¿No tienes una cuenta?</string>
+    <string name="register">Regístrate</string>
+</resources>

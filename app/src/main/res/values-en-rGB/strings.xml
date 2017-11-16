@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="introduceBusqueda">Enter a ZIP Code</string>
+    <string name="search_icon">Search Shops</string>
+    <string name="user_icon">User Control Panel</string>
+    <string name="order_icon">Order</string>
+    <string name="nick_label">User</string>
+    <string name="password_label">Password</string>
+    <string name="title_activity_login">User Login</string>
+    <string name="inicioSesion">Log In</string>
+    <string name="policiesJB" >By clicking Create account whit email, you accept Just Buy\'s Terms and Conditions, Privacy Policy and Cookies Policy.</string>
+    <string name="register_label">Don\'t have an account?</string>
+    <string name="register">Sing Up</string>
+</resources>

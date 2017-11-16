@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name" translatable="false">justBuy</string>
+
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="introduceBusqueda">Enter a ZIP Code</string>
+    <string name="search_icon">Search Shops</string>
+    <string name="user_icon">User Control Panel</string>
+    <string name="order_icon">Order</string>
+    <string name="title_activity_login">User Login</string>
+    <string name="nick_label">User</string>
+    <string name="password_label">Password</string>
+    <string name="inicioSesion">Log In</string>
+    <string name="policiesJB" >By clicking Create account whit email, you accept Just Buy\'s Terms and Conditions, Privacy Policy and Cookies Policy.</string>
+    <string name="register_label">Don\'t have an account?</string>
+    <string name="register">Sing Up</string>
+</resources>
