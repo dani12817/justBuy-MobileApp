@@ -11,4 +11,6 @@
     <string name="policiesJB" >By clicking Create account whit email, you accept Just Buy\'s Terms and Conditions, Privacy Policy and Cookies Policy.</string>
     <string name="register_label">Don\'t have an account?</string>
     <string name="register">Sing Up</string>
+    <string name="registerAction">Register</string>
+    <string name="inicioSesion_label">You already have an account?</string>
 </resources>

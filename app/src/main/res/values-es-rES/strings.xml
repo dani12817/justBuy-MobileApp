@@ -11,4 +11,6 @@
     <string name="policiesJB" >Al Crear una cuenta, aceptas los Términos y Condiciones de Just Buy, sus Políticas de Privacidad y Políticas de Cookies</string>
     <string name="register_label">¿No tienes una cuenta?</string>
     <string name="register">Regístrate</string>
+    <string name="registerAction">Registrar</string>
+    <string name="inicioSesion_label">¿Ya tienes una cuenta?</string>
 </resources>
