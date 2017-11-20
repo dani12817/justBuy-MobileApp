@@ -23,11 +23,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".login"
-            android:label="@string/title_activity_login"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".registerUser"></activity>
+        <activity android:name=".registerUser" />
+        <activity android:name=".loginUser" />
+        <activity android:name=".orderList"></activity>
     </application>
 
 </manifest>

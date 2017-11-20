@@ -1,26 +1,21 @@
 package danielleal.justbuy;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
-public class registerUser extends AppCompatActivity {
+public class loginUser extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register_user);
-
-        //Add Back Button
+        setContentView(R.layout.activity_login_user);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
 
-    }
-
-    public void closeActivity(View view){
-        this.finish();
     }
 
     @Override
@@ -32,5 +27,9 @@ public class registerUser extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void registerUserActivity(View V){
+        startActivity(new Intent(this,registerUser.class));
     }
 }

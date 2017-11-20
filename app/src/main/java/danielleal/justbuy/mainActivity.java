@@ -80,9 +80,9 @@ public class mainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_user) {
-            startActivity(new Intent(mainActivity.this,login.class));
+            startActivity(new Intent(this,loginUser.class));
         } else if (id == R.id.nav_order) {
-
+            startActivity(new Intent(this,orderList.class));
         } else if (id == R.id.nav_search) {
 
         } else if (id == R.id.nav_manage) {
