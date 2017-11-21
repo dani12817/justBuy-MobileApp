@@ -13,4 +13,5 @@
     <string name="register">Sing Up</string>
     <string name="registerAction">Register</string>
     <string name="inicioSesion_label">You already have an account?</string>
+    <string name="noRegister_label">Guest</string>
 </resources>

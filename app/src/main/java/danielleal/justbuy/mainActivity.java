@@ -35,6 +35,10 @@ public class mainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        if(userData.getNick().isEmpty())userData.setNick(getString(R.string.noRegister_label));
+
+        ((TextView) findViewById(R.id.userDataLabel)).setText(userData.getNick());
     }
 
     public void enClick(View V){

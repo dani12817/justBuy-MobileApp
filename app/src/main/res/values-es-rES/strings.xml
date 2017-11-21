@@ -13,4 +13,5 @@
     <string name="register">Regístrate</string>
     <string name="registerAction">Registrar</string>
     <string name="inicioSesion_label">¿Ya tienes una cuenta?</string>
+    <string name="noRegister_label">Invitado</string>
 </resources>
