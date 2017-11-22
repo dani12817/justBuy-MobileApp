@@ -14,4 +14,14 @@
     <string name="registerAction">Registrar</string>
     <string name="inicioSesion_label">¿Ya tienes una cuenta?</string>
     <string name="noRegister_label">Invitado</string>
+    <string name="accountDetails">Account Details</string>
+    <string name="general">General</string>
+    <string-array name="userControlPanel">
+        <item>Información de la Cuenta</item>
+        <item>Direcciones</item>
+        <item>Métodos de Pago</item>
+    </string-array>
+    <string-array name="userControlPanel2">
+        <item>Términos y Condiciones</item>
+    </string-array>
 </resources>

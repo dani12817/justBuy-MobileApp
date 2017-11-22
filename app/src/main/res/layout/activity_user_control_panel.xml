@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="danielleal.justbuy.userControlPanel">
+
+    <TextView
+        android:id="@+id/labelAccountDetais"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/accountDetails"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/listUserDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="186dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:entries="@array/userControlPanel"
+        app:layout_constraintStart_toEndOf="@+id/imageUserInfo"
+        app:layout_constraintTop_toBottomOf="@+id/labelAccountDetais" />
+
+    <ImageView
+        android:id="@+id/imageUserInfo"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="23dp"
+        android:contentDescription="@string/userInfoImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelAccountDetais"
+        app:srcCompat="@drawable/user_info" />
+
+    <ImageView
+        android:id="@+id/imageLocation"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="23dp"
+        android:contentDescription="@string/userInfoImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageUserInfo"
+        app:srcCompat="@drawable/location_icon" />
+
+    <ImageView
+        android:id="@+id/imagePayment"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="23dp"
+        android:contentDescription="@string/userInfoImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageLocation"
+        app:srcCompat="@drawable/payment_icon" />
+
+    <TextView
+        android:id="@+id/labelGeneral"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="58dp"
+        android:text="@string/general"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagePayment" />
+
+    <ListView
+        android:id="@+id/listGeneral"
+        android:layout_width="wrap_content"
+        android:layout_height="73dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:entries="@array/userControlPanel2"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/labelGeneral" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="25dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="23dp"
+        android:contentDescription="@string/userInfoImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelGeneral"
+        app:srcCompat="@drawable/terms_conditions" />
+
+</android.support.constraint.ConstraintLayout>

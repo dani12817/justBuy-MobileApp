@@ -25,7 +25,8 @@
         </activity>
         <activity android:name=".registerUser" />
         <activity android:name=".loginUser" />
-        <activity android:name=".orderList"></activity>
+        <activity android:name=".orderList" />
+        <activity android:name=".userControlPanel"></activity>
     </application>
 
 </manifest>

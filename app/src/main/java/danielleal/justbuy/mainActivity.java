@@ -36,7 +36,7 @@ public class mainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        if(userData.getNick().isEmpty())userData.setNick(getString(R.string.noRegister_label));
+        //if(userData.getNick().isEmpty())userData.setNick(getString(R.string.noRegister_label));
 
         ((TextView) findViewById(R.id.userDataLabel)).setText(userData.getNick());
     }
@@ -88,7 +88,7 @@ public class mainActivity extends AppCompatActivity
         } else if (id == R.id.nav_order) {
             startActivity(new Intent(this,orderList.class));
         } else if (id == R.id.nav_search) {
-
+            startActivity(new Intent(this,userControlPanel.class));
         } else if (id == R.id.nav_manage) {
 
         }
