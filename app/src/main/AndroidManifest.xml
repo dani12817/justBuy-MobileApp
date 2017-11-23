@@ -26,7 +26,10 @@
         <activity android:name=".registerUser" />
         <activity android:name=".loginUser" />
         <activity android:name=".orderList" />
-        <activity android:name=".userControlPanel"></activity>
+        <activity android:name=".userControlPanel" />
+        <activity android:name=".editUserInfo" />
+        <activity android:name=".editAddress" />
+        <activity android:name=".addressList"></activity>
     </application>
 
 </manifest>

@@ -10,8 +10,7 @@
         android:id="@+id/labelUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="43dp"
-        android:layout_marginLeft="43dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="55dp"
         android:text="@string/nick_label"
         android:textSize="18sp"
@@ -21,10 +20,10 @@
 
     <EditText
         android:id="@+id/textUser"
-        android:layout_width="300dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="82dp"
-        android:layout_marginStart="82dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,11 +31,10 @@
         app:layout_constraintTop_toBottomOf="@+id/labelUser" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="43dp"
-        android:layout_marginLeft="43dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="12dp"
         android:text="@string/password_label"
         android:textSize="18sp"
@@ -45,30 +43,30 @@
         app:layout_constraintTop_toBottomOf="@+id/textUser" />
 
     <EditText
-        android:id="@+id/editText2"
-        android:layout_width="300dp"
+        android:id="@+id/editPassword"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="82dp"
-        android:layout_marginStart="82dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/textPassword" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="280dp"
+        android:id="@+id/buttonLogIn"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="62dp"
-        android:layout_marginStart="62dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="23dp"
         android:background="@color/colorPrimary"
         android:text="@string/title_activity_login"
         android:textColor="@android:color/background_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/editPassword" />
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -79,7 +77,7 @@
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button">
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogIn">
 
         <TextView
             android:id="@+id/labelNoAccount"
@@ -104,10 +102,10 @@
 
     <TextView
         android:id="@+id/labelPoliticas"
-        android:layout_width="220dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="90dp"
-        android:layout_marginStart="90dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginStart="70dp"
         android:layout_marginTop="17dp"
         android:text="@string/policiesJB"
         app:layout_constraintEnd_toEndOf="parent"

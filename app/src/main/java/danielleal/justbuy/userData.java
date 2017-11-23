@@ -5,11 +5,13 @@ package danielleal.justbuy;
  */
 
 public class userData {
-    private static String nick = "";
-    private static String name = "";
+    private String nick = "";
+    private String name = "";
 
-    protected userData(){
+    private static final userData holderUD = new userData();
 
+    public static userData getInstance() {
+        return holderUD;
     }
 
     public void logInSet(String newNick, String newName){
@@ -17,19 +19,19 @@ public class userData {
         setName(newName);
     }
 
-    public static void setNick(String newNick){
+    public void setNick(String newNick){
         nick = newNick;
     }
 
-    public static String getNick(){
+    public String getNick(){
         return nick;
     }
 
-    public static void setName(String newName){
+    public void setName(String newName){
         name = newName;
     }
 
-    public static String getName(){
+    public String getName(){
         return name;
     }
 }

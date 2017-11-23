@@ -2,8 +2,6 @@ package danielleal.justbuy;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,7 +11,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -36,9 +33,9 @@ public class mainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        //if(userData.getNick().isEmpty())userData.setNick(getString(R.string.noRegister_label));
+        if(userData.getInstance().getNick().isEmpty())userData.getInstance().setNick(getString(R.string.noRegister_label));
 
-        ((TextView) findViewById(R.id.userDataLabel)).setText(userData.getNick());
+        ((TextView) findViewById(R.id.userDataLabel)).setText(userData.getInstance().getNick());
     }
 
     public void enClick(View V){
@@ -88,8 +85,9 @@ public class mainActivity extends AppCompatActivity
         } else if (id == R.id.nav_order) {
             startActivity(new Intent(this,orderList.class));
         } else if (id == R.id.nav_search) {
-            startActivity(new Intent(this,userControlPanel.class));
+            startActivity(new Intent(this,mainActivity.class));
         } else if (id == R.id.nav_manage) {
+            startActivity(new Intent(this,userControlPanel.class));
 
         }
 

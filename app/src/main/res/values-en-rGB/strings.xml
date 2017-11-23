@@ -16,6 +16,17 @@
     <string name="noRegister_label">Guest</string>
     <string name="accountDetails">Account Details</string>
     <string name="general">General</string>
+    <string name="name">Name</string>
+    <string name="email">E-Mail</string>
+    <string name="phoneNumber">Phone Number</string>
+    <string name="saveChanges">Save Changes</string>
+    <string name="sendSales">Send me Sales about my favorite Shops.</string>
+    <string name="addressLine1">Address Line 1</string>
+    <string name="addressLine2">Address Line 2</string>
+    <string name="city">City</string>
+    <string name="zipCode">ZIP Code</string>
+    <string name="chooseAddressName">Choose a Name for this Address</string>
+    <string name="address">Address</string>
     <string-array name="userControlPanel">
         <item>Account Info</item>
         <item>Addresses</item>
@@ -24,4 +35,6 @@
     <string-array name="userControlPanel2">
         <item>Terms and Conditions</item>
     </string-array>
+    <string name="userInfoImage">userInfoImage</string>
+    <string name="addAddress">Add an Address</string>
 </resources>

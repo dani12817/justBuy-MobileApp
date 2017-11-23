@@ -16,6 +16,17 @@
     <string name="noRegister_label">Invitado</string>
     <string name="accountDetails">Account Details</string>
     <string name="general">General</string>
+    <string name="name">Nombre</string>
+    <string name="email">E-Mail</string>
+    <string name="phoneNumber">Número de Teléfono</string>
+    <string name="saveChanges">Guardas Cambios</string>
+    <string name="sendSales">Envíame Ofertas relacionadas con mis Tiendas favoritas.</string>
+    <string name="addressLine1">Dirección Línea 1</string>
+    <string name="addressLine2">Dirección Línea 2</string>
+    <string name="city">Ciudad</string>
+    <string name="zipCode">Código Postal</string>
+    <string name="chooseAddressName">Elige un Nombre para esta Dirección</string>
+    <string name="address">Dirección</string>
     <string-array name="userControlPanel">
         <item>Información de la Cuenta</item>
         <item>Direcciones</item>
@@ -24,4 +35,6 @@
     <string-array name="userControlPanel2">
         <item>Términos y Condiciones</item>
     </string-array>
+    <string name="userInfoImage">userInfoImage</string>
+    <string name="addAddress">Add an Address</string>
 </resources>
