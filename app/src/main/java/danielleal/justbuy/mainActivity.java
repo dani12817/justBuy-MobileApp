@@ -2,6 +2,7 @@ package danielleal.justbuy;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -39,7 +40,10 @@ public class mainActivity extends AppCompatActivity
     }
 
     public void enClick(View V){
-        ((TextView) findViewById(R.id.labelBusqueda)).setText(((EditText) findViewById(R.id.busquedaText)).getText());
+        //((TextView) findViewById(R.id.labelBusqueda)).setText(((EditText) findViewById(R.id.busquedaText)).getText());
+        Intent intent = new Intent(this, resultadoTiendas.class);
+        intent.putExtra("searchZIP", ((EditText) findViewById(R.id.busquedaText)).getText());
+        startActivity(intent);
     }
 
     @Override
@@ -67,8 +71,13 @@ public class mainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (id){
+            case R.id.action_AZ:
+                Log.i("Order","Alphabet Order");
+                break;
+            case R.id.action_rating:
+                Log.i("Order","Rating Order");
+                break;
         }
 
         return super.onOptionsItemSelected(item);

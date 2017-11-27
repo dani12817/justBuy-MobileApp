@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">justBuy</string>
+    <string name="app_name" translatable="false">Just Buy</string>
 
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
@@ -42,4 +42,21 @@
     <string-array name="userControlPanel2">
         <item>Terms and Conditions</item>
     </string-array>
+    <string name="result">Shop/s</string>
+    <string name="noFilters">No Filters</string>
+    <string name="order">Orders</string>
+    <string name="aZ">A-Z</string>
+    <string name="rating">Rating</string>
+    <string name="title_activity_shop_selected" translatable="false">shopSelected</string>
+    <string name="title_home">Information</string>
+    <string name="title_dashboard">Products</string>
+    <string name="title_notifications">Ratings</string>
+    <string name="logoShop" translatable="false">logoShop</string>
+    <string name="ShopName">ShopName</string>
+    <string name="ShopCategory">ShopCategory</string>
+    <string name="NumRatings">NumRatings</string>
+    <string name="title_activity_maps" translatable="false">Map</string>
+    <string name="descriptionShop">descriptionShop</string>
+    <string name="averageRating">averageRating</string>
+    <string name="basedInCommentaries">Based in x Commentaries</string>
 </resources>

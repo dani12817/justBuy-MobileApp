@@ -2,7 +2,7 @@
 <resources>
     <string name="introduceBusqueda">Introduce un Cod. Postal</string>
     <string name="search_icon">Buscar Tiendas</string>
-    <string name="user_icon">Panel de Control del usuario</string>
+    <string name="user_icon">Panel de Control del Usuario</string>
     <string name="order_icon">Pedidos</string>
     <string name="nick_label">Usuario</string>
     <string name="password_label">Contraseña</string>
@@ -36,5 +36,19 @@
         <item>Términos y Condiciones</item>
     </string-array>
     <string name="userInfoImage">userInfoImage</string>
-    <string name="addAddress">Add an Address</string>
+    <string name="addAddress">Añadir una Dirección</string>
+    <string name="result">Tienda/s</string>
+    <string name="noFilters">Sin Filtos</string>
+    <string name="order">Pedidos</string>
+    <string name="rating">Valoración</string>
+    <string name="aZ">A-Z</string>
+    <string name="ShopName">ShopName</string>
+    <string name="ShopCategory">ShopCategory</string>
+    <string name="NumRatings">NumRatings</string>
+    <string name="title_home">Información</string>
+    <string name="title_dashboard">Produtos</string>
+    <string name="title_notifications">Valoración</string>
+    <string name="descriptionShop">descriptionShop</string>
+    <string name="averageRating">averageRating</string>
+    <string name="basedInCommentaries">Based in x Commentaries</string>
 </resources>
