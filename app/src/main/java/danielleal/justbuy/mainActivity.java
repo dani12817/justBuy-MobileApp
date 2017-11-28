@@ -13,7 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
-import android.widget.TextView;
+import java.sql.*;
 
 public class mainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -34,9 +34,42 @@ public class mainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        if(userData.getInstance().getNick().isEmpty())userData.getInstance().setNick(getString(R.string.noRegister_label));
+        //if(userData.getInstance().getNick().isEmpty())userData.getInstance().setNick(getString(R.string.noRegister_label));
 
-        ((TextView) findViewById(R.id.userDataLabel)).setText(userData.getInstance().getNick());
+        ((EditText) findViewById(R.id.busquedaText)).setText("NADA");
+
+        Log.i("Android", " Starting MySQL Connection");
+        connectToDB();
+    }
+
+    public void connectToDB(){
+        try {
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            Log.i("Android", " MySQL Connection ok");
+            Connection con = DriverManager.getConnection("jdbc:mysql://10.0.2.2:3306/justbuy", "dani", "1234");
+            //         System.out.println("Database connection success");
+            Log.d("Android2","Line 2");
+            String result = ("");
+            Log.d("Android3", " Line 3");
+            Statement st = con.createStatement();
+
+            ResultSet rs = st.executeQuery("select * from usuario");
+
+            ResultSetMetaData rsmd = rs.getMetaData();
+
+            while (rs.next()) {
+                result += rsmd.getColumnName(1) + ": " + rs.getInt(1) + "\n";
+                result += rsmd.getColumnName(2) + ": " + rs.getString(2) + "\n";
+                result += rsmd.getColumnName(3) + ": " + rs.getString(3) + "\n";
+            }
+
+            //tv.setText(result);
+
+        } catch (Exception e) {
+            System.out.println(">>> "+e.getMessage());
+            //tv.setText("Test Error:"+e.toString());
+            Log.w("Android-system","system get connection");
+        }
     }
 
     public void enClick(View V){
