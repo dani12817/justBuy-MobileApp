@@ -123,6 +123,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="30dp"
         android:background="@color/colorPrimary"
+        android:onClick="saveUserChanges"
         android:text="@string/saveChanges"
         android:textColor="@android:color/background_light"
         app:layout_constraintEnd_toEndOf="parent"

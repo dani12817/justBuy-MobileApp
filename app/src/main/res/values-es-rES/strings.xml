@@ -51,4 +51,8 @@
     <string name="descriptionShop">descriptionShop</string>
     <string name="averageRating">averageRating</string>
     <string name="basedInCommentaries">Based in x Commentaries</string>
+    <string name="userNameLabel">Invitado</string>
+    <string name="errorUserLogIn">Nick o Contrasña Errónea</string>
+    <string name="okUserLogIn">Inicio de Sesión Correcto</string>
+    <string name="changesSaved">Cambios Guardados</string>
 </resources>

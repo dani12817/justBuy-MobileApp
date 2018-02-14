@@ -34,14 +34,17 @@
     <string name="chooseAddressName">Choose a Name for this Address</string>
     <string name="address">Address</string>
     <string name="addAddress">Add an Address</string>
+
     <string-array name="userControlPanel">
         <item>Account Info</item>
         <item>Addresses</item>
         <item>Payment Methods</item>
     </string-array>
+
     <string-array name="userControlPanel2">
         <item>Terms and Conditions</item>
     </string-array>
+
     <string name="result">Shop/s</string>
     <string name="noFilters">No Filters</string>
     <string name="order">Orders</string>
@@ -59,4 +62,9 @@
     <string name="descriptionShop">descriptionShop</string>
     <string name="averageRating">averageRating</string>
     <string name="basedInCommentaries">Based in x Commentaries</string>
+    <string name="userNameLabel">Guest</string>
+    <string name="errorUserLogIn">Nick or Password not valid</string>
+    <string name="okUserLogIn">Login Successful</string>
+    <string name="changesSaved">Changes Saved</string>
+    <string name="title_activity_address_list1">Addresses</string>
 </resources>
