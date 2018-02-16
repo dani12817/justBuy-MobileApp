@@ -55,4 +55,9 @@
     <string name="errorUserLogIn">Nick or Password not valid</string>
     <string name="okUserLogIn">Login Successful</string>
     <string name="changesSaved">Changes Saved</string>
+    <string name="deleteAddress">Delete Address</string>
+    <string name="editAddress">Edit Address</string>
+    <string name="successNewUser">User Registered</string>
+    <string name="shopResultZIP">Shops on</string>
+    <string name="errorSearchZIP">No ZIP Code Introduced</string>
 </resources>

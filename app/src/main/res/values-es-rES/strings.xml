@@ -55,4 +55,9 @@
     <string name="errorUserLogIn">Nick o Contrasña Errónea</string>
     <string name="okUserLogIn">Inicio de Sesión Correcto</string>
     <string name="changesSaved">Cambios Guardados</string>
+    <string name="deleteAddress">Eliminar Dirección</string>
+    <string name="editAddress">Editar Dirección</string>
+    <string name="successNewUser">Usuario Registrado</string>
+    <string name="shopResultZIP">Tiendas en</string>
+    <string name="errorSearchZIP">No se ha Introducido Ningún CP</string>
 </resources>

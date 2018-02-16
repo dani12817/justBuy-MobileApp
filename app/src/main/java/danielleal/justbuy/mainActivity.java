@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.sql.*;
 
@@ -26,6 +27,8 @@ public class mainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     TextView userLabel,nickLabel;
     ImageView userAvatar;
+    EditText editZIPSearch;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +42,8 @@ public class mainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+        editZIPSearch = findViewById(R.id.editSearchZip);
+
         NavigationView navigationView = findViewById(R.id.nav_view);
         nickLabel = navigationView.getHeaderView(0).findViewById(R.id.userDataLabel);
         userLabel = navigationView.getHeaderView(0).findViewById(R.id.userNameLabel);
@@ -51,14 +56,16 @@ public class mainActivity extends AppCompatActivity
 
     public void changeMenuUserLabels(){
         if(userData.getInstance().getLogIn()){
-            userAvatar.setImageBitmap(
-                    Bitmap.createScaledBitmap(
-                            BitmapFactory.decodeByteArray(userData.getInstance().getAvatar(), 0, userData.getInstance().getAvatar().length),
-                            221,
-                            221,
-                            false
-                    )
-            );
+            if(userData.getInstance().getAvatar() != null){
+                userAvatar.setImageBitmap(
+                        Bitmap.createScaledBitmap(
+                                BitmapFactory.decodeByteArray(userData.getInstance().getAvatar(), 0, userData.getInstance().getAvatar().length),
+                                221,
+                                221,
+                                false
+                        )
+                );
+            }
 
             nickLabel.setText(userData.getInstance().getNick());
             userLabel.setText(userData.getInstance().getName());
@@ -69,11 +76,16 @@ public class mainActivity extends AppCompatActivity
         }
     }
 
-    public void enClick(View V){
-        //((TextView) findViewById(R.id.labelBusqueda)).setText(((EditText) findViewById(R.id.busquedaText)).getText());
-        Intent intent = new Intent(this, resultadoTiendas.class);
-        intent.putExtra("searchZIP", ((EditText) findViewById(R.id.busquedaText)).getText());
-        startActivity(intent);
+    public void searchShops(View V){
+
+        System.out.println(">>> "+editZIPSearch.getText());
+
+        if(editZIPSearch.getText().toString().isEmpty()) {
+            Toast.makeText(getApplicationContext(), getResources().getString(R.string.errorSearchZIP), Toast.LENGTH_LONG).show();
+        }else{
+            startActivity(new Intent(this, searchShopResult.class).putExtra("searchShopZip", editZIPSearch.getText().toString()));
+        }
+
     }
 
     @Override

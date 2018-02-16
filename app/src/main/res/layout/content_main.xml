@@ -10,18 +10,17 @@
     android:background="@drawable/fondo_inicio">
 
 
-    <EditText
-        android:id="@+id/busquedaText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="25dp"
-        android:layout_marginStart="25dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/buttonBuscar"
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="231dp"
+        android:layout_height="97dp"
+        android:layout_marginEnd="78dp"
+        android:layout_marginStart="79dp"
+        android:layout_marginTop="44dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labelBusqueda" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/jb_logo" />
 
     <TextView
         android:id="@+id/labelBusqueda"
@@ -35,6 +34,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoImage" />
 
+    <EditText
+        android:id="@+id/editSearchZip"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="25dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/buttonBuscar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelBusqueda" />
+
     <Button
         android:id="@+id/buttonBuscar"
         android:layout_width="0dp"
@@ -44,24 +56,12 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="20dp"
         android:background="@color/colorPrimary"
-        android:onClick="enClick"
+        android:onClick="searchShops"
         android:text="@android:string/search_go"
         android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/busquedaText" />
-
-    <ImageView
-        android:id="@+id/logoImage"
-        android:layout_width="231dp"
-        android:layout_height="97dp"
-        android:layout_marginEnd="78dp"
-        android:layout_marginStart="79dp"
-        android:layout_marginTop="44dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/jb_logo" />
+        app:layout_constraintTop_toBottomOf="@+id/editSearchZip" />
 
 </android.support.constraint.ConstraintLayout>

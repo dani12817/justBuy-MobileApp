@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -54,7 +55,10 @@ public class editAddress extends AppCompatActivity {
         System.out.println("IdAddress -> "+idAddressEdit);
 
         if(idAddressEdit != -1){
+            setTitle(getResources().getString(R.string.editAddress));
             prepareAddressItemEdit();
+        }else{
+            ((Button) findViewById(R.id.buttonDeleteAddress)).setVisibility(View.GONE);
         }
 
     }
@@ -109,6 +113,22 @@ public class editAddress extends AppCompatActivity {
         this.finish();
     }
 
+    public void deleteAddressItemEdit(View v){
+        sqlThread = new sqlThread();
+        threadTask = 3;
+        sqlThread.start();
+
+        try {
+            sqlThread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        Intent intent = new Intent();
+        setResult(4,intent);
+        this.finish();
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -126,6 +146,7 @@ public class editAddress extends AppCompatActivity {
     /*******************************************/
 
     public class sqlThread extends Thread{
+        Connection conn;
         public void run(){
             try {
                 switch (threadTask){
@@ -137,6 +158,10 @@ public class editAddress extends AppCompatActivity {
                         break;
                     case 2:
                         setAddress();
+                        break;
+                    case 3:
+                        deleteAddress();
+                        break;
                 }
             } catch (Throwable et) {
                 System.out.println("oops! No se puede conectar. Error: " + et.toString());
@@ -146,7 +171,7 @@ public class editAddress extends AppCompatActivity {
         public void getAddress() throws Throwable{
 
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://10.0.2.2:3306/justbuy", "root", "root");
+            conn = DriverManager.getConnection("jdbc:mysql://10.0.2.2:3306/justbuy", "root", "root");
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery("SELECT * FROM direccion WHERE iddireccion = "+idAddressEdit);
 
@@ -161,7 +186,7 @@ public class editAddress extends AppCompatActivity {
             ZIPList = new ArrayList<>();
 
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://10.0.2.2:3306/justbuy", "root", "root");
+            conn = DriverManager.getConnection("jdbc:mysql://10.0.2.2:3306/justbuy", "root", "root");
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery("SELECT * FROM codpostal");
 
@@ -175,14 +200,32 @@ public class editAddress extends AppCompatActivity {
         public void setAddress() throws Throwable{
             String querySQL;
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://10.0.2.2:3306/justbuy", "root", "root");
+            conn = DriverManager.getConnection("jdbc:mysql://10.0.2.2:3306/justbuy", "root", "root");
             Statement st = conn.createStatement();
-            querySQL = "INSERT INTO direccion(usuario,nombre,direccionLinea1,direccionLinea2,codPostal) " +
-                    "VALUES(\""+nickUser+"\",\""+textNameAddress.getText()+"\",\""+textLine1Address.getText()+"\",\""+textLine2Address.getText()+"\"," +
-                    +((ZIPItem)spinnerListZIP.getSelectedItem()).getIdZIP()+");";
+            if(idAddressEdit == -1) {
+                querySQL = "INSERT INTO direccion(usuario,nombre,direccionLinea1,direccionLinea2,codPostal) " +
+                        "VALUES(\"" + nickUser + "\",\"" + textNameAddress.getText() + "\",\"" + textLine1Address.getText() + "\",\"" + textLine2Address.getText() + "\"," +
+                        +((ZIPItem) spinnerListZIP.getSelectedItem()).getIdZIP() + ");";
+            }else{
+                querySQL = "UPDATE direccion " +
+                        "SET usuario = \""+nickUser+"\", nombre = \""+textNameAddress.getText()+"\", direccionLinea1 = \""+textLine1Address.getText()+"\", " +
+                        "direccionLinea2 = \""+textLine2Address.getText()+"\", codPostal = "+((ZIPItem) spinnerListZIP.getSelectedItem()).getIdZIP()+" " +
+                        "WHERE iddireccion = "+idAddressEdit+";";
+            }
 
             //System.out.println("->>>>>> "+querySQL);
-            //System.out.println(">>>>>>> "+userData.getInstance().getNick()+" - "+userData.getInstance().getName());
+            st.execute(querySQL);
+
+            conn.close();
+        }
+
+        public void deleteAddress() throws Throwable{
+            String querySQL;
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://10.0.2.2:3306/justbuy", "root", "root");
+            Statement st = conn.createStatement();
+            querySQL = "DELETE FROM direccion WHERE iddireccion = "+idAddressEdit+";";
+
             st.execute(querySQL);
 
             conn.close();

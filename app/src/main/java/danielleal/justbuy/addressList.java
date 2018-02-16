@@ -60,7 +60,6 @@ public class addressList extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         //System.out.println(">>> resultCode = "+resultCode);
         if(resultCode==4) {
-            //System.out.println("Hacer cosas");
             addAddressesToList();
         }
     }
