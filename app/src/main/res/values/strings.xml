@@ -71,5 +71,4 @@
     <string name="successNewUser">User Registered</string>
     <string name="shopResultZIP">Shops on</string>
     <string name="errorSearchZIP">No ZIP Code Introduced</string>
-    <string name="title_activity_search_shop_result">searchShopResult</string>
 </resources>

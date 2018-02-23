@@ -65,25 +65,25 @@
                 app:layout_constraintTop_toBottomOf="@+id/labelShopCategory">
 
                 <RatingBar
-                    android:id="@+id/ratingBarShop"
+                    android:id="@+id/ratingBarSearchShop"
                     style="@style/Widget.AppCompat.RatingBar.Small"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:numStars="6"
                     android:rating="5"
-                    app:layout_constraintEnd_toStartOf="@+id/labelNumRatings"
+                    app:layout_constraintEnd_toStartOf="@+id/labelSearchShopNumRatings"
                     app:layout_constraintHorizontal_chainStyle="spread_inside"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/labelNumRatings"
+                    android:id="@+id/labelSearchShopNumRatings"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:text="@string/NumRatings"
                     android:textSize="12sp"
-                    app:layout_constraintStart_toEndOf="@+id/ratingBarShop"
+                    app:layout_constraintStart_toEndOf="@+id/ratingBarSearchShop"
                     app:layout_constraintTop_toTopOf="parent" />
             </android.support.constraint.ConstraintLayout>
 
@@ -102,7 +102,30 @@
         app:menu="@menu/navigation" />
 
     <include
+        android:id="@+id/includeShopSelected"
         layout="@layout/activity_shop_info"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/navigation" />
+
+    <include
+        android:id="@+id/includeShopSelectedRating"
+        layout="@layout/activity_shop_selected_rating"
+        android:visibility="gone"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/navigation" />
+
+    <include
+        android:id="@+id/includeShopSelectedProduct"
+        layout="@layout/activity_shop_selected_product"
+        android:visibility="gone"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"

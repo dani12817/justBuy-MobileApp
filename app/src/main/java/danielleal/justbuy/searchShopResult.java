@@ -1,6 +1,7 @@
 package danielleal.justbuy;
 
 import android.content.Intent;
+import android.os.Parcel;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 
 import danielleal.justbuy.classes.listViewItems.adapterList.adapterSearchShop;
 import danielleal.justbuy.classes.listViewItems.searchShopItemList;
+import danielleal.justbuy.classes.shopData;
 
 public class searchShopResult extends AppCompatActivity {
     String ZIPSearch; searchShopResult searchShopResult;
@@ -78,7 +80,11 @@ public class searchShopResult extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 final int pos = position;
 
-                startActivity(new Intent(searchShopResult,editAddress.class));
+                shopData shopData = new shopData(listItemsShop.get(pos));
+
+                Intent intent = new Intent(searchShopResult,shopSelected.class).putExtra("shopSelected",shopData);
+                intent.putExtra("shopSelectedLogo",listItemsShop.get(pos).getLogo());
+                startActivity(intent);
 
             }
         });
@@ -98,9 +104,26 @@ public class searchShopResult extends AppCompatActivity {
 
                 while(rs.next()) {
                     listItemsShop.add(new searchShopItemList(rs.getInt(1),rs.getString(2),rs.getBytes(3),rs.getString(4),rs.getString(5),rs.getDouble(6)
-                            ,rs.getDouble(7),rs.getString(10),rs.getString(11),ZIPSearch));
+                            ,rs.getDouble(7),rs.getString(11),rs.getString(12),ZIPSearch));
                 }
 
+                for (int i = 0; i<listItemsShop.size();i++){
+                    rs = st.executeQuery("SELECT cat.nombre FROM categoriasdetienda catTie, categoria cat " +
+                            "WHERE catTie.tienda = "+listItemsShop.get(i).getIdShop()+" AND catTie.categoria = cat.idcategoria;");
+                    while(rs.next()) {
+                        listItemsShop.get(i).setCategories(rs.getString(1));
+                    }
+                }
+
+                for (int i = 0; i<listItemsShop.size();i++){
+                    rs = st.executeQuery("SELECT COUNT(*),AVG(puntuacion) FROM justbuy.valoracion WHERE tienda = "+listItemsShop.get(i).getIdShop()+";");
+                    rs.next();
+                    listItemsShop.get(i).setRatingNum(rs.getInt(1));
+                    listItemsShop.get(i).setRatingAverage(rs.getFloat(2));
+
+                }
+
+                rs.close();
                 conn.close();
             } catch (SQLException se) {
                 System.out.println("oops! No se puede conectar. Error: " + se.toString());

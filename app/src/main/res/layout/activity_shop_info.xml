@@ -44,7 +44,7 @@
             app:layout_constraintTop_toBottomOf="@+id/map">
 
             <TextView
-                android:id="@+id/labelAddress"
+                android:id="@+id/labelShopAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/address"
@@ -53,14 +53,14 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/labelCityZIP"
+                android:id="@+id/labelShopCityZIP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="@string/city"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/labelAddress" />
+                app:layout_constraintTop_toBottomOf="@+id/labelShopAddress" />
         </android.support.constraint.ConstraintLayout>
 
     </android.support.constraint.ConstraintLayout>

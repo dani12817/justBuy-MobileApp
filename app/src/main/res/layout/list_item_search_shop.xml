@@ -11,7 +11,6 @@
         android:layout_height="80dp"
         android:layout_marginBottom="10dp"
         android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:contentDescription="@string/logoShop"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -31,4 +30,46 @@
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imageSearchShopLogo"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/labelSearchShopCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/ShopCategory"
+        app:layout_constraintStart_toEndOf="@+id/imageSearchShopLogo"
+        app:layout_constraintTop_toBottomOf="@+id/labelSearchShopName" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/ratingSearchShopInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/imageSearchShopLogo"
+        app:layout_constraintTop_toBottomOf="@+id/labelSearchShopCategory">
+
+        <RatingBar
+            android:id="@+id/ratingBarSearchShop2"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="6"
+            android:rating="5"
+            app:layout_constraintEnd_toStartOf="@+id/labelSearchShopNumRatings"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/labelSearchShopNumRatings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="@string/NumRatings"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/ratingBarSearchShop2"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
 </android.support.constraint.ConstraintLayout>

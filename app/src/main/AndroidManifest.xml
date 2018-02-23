@@ -72,7 +72,8 @@
             android:name=".shopSelectedInfo"
             android:label="@string/title_activity_maps" />
         <activity android:name=".shopSelectedRating" />
-        <activity android:name=".searchShopResult"></activity>
+        <activity android:name=".searchShopResult" />
+        <activity android:name=".shopSelectedProduct"></activity>
     </application>
 
 </manifest>

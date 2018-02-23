@@ -13,19 +13,19 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import danielleal.justbuy.classes.listViewItems.searchShopItemList;
 
 import danielleal.justbuy.R;
+import danielleal.justbuy.classes.listViewItems.productShopItemList;
 
 /**
- * Created by Dani on 16/02/2018.
+ * Created by Dani on 21/02/2018.
  */
 
-public class adapterSearchShop extends BaseAdapter {
+public class adapterProductShop extends BaseAdapter {
     protected Activity activity;
-    protected ArrayList<searchShopItemList> items;
+    protected ArrayList<productShopItemList> items;
 
-    public adapterSearchShop (Activity activity, ArrayList<searchShopItemList> items) {
+    public adapterProductShop (Activity activity, ArrayList<productShopItemList> items) {
         this.activity = activity;
         this.items = items;
         //addAll(items);
@@ -40,7 +40,7 @@ public class adapterSearchShop extends BaseAdapter {
         items.clear();
     }
 
-    public void addAll(ArrayList<searchShopItemList> shopsSearched) {
+    public void addAll(ArrayList<productShopItemList> shopsSearched) {
         for (int i = 0; i < shopsSearched.size(); i++) {
             items.add(shopsSearched.get(i));
         }
@@ -63,19 +63,20 @@ public class adapterSearchShop extends BaseAdapter {
 
         if (convertView == null) {
             LayoutInflater inf = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            v = inf.inflate(R.layout.list_item_search_shop, null);
+            v = inf.inflate(R.layout.list_item_product_shop, null);
         }
 
-        searchShopItemList shop = items.get(position);
+        productShopItemList product = items.get(position);
 
-        TextView title = v.findViewById(R.id.labelSearchShopName);
-        title.setText(shop.getName());
+        TextView title = v.findViewById(R.id.labelProductName);
+        //System.out.println(">>> Title "+title);
+        title.setText(product.getNombre());
 
-        if(shop.getLogo() != null) {
-            ImageView imagelogo = v.findViewById(R.id.imageSearchShopLogo);
+        if(product.getImagen() != null) {
+            ImageView imagelogo = v.findViewById(R.id.imageProductLogo);
             imagelogo.setImageBitmap(
                     Bitmap.createScaledBitmap(
-                            BitmapFactory.decodeByteArray(shop.getLogo(), 0, shop.getLogo().length),
+                            BitmapFactory.decodeByteArray(product.getImagen(), 0, product.getImagen().length),
                             221,
                             221,
                             false
@@ -83,16 +84,12 @@ public class adapterSearchShop extends BaseAdapter {
             );
         }
 
-        TextView category = v.findViewById(R.id.labelSearchShopCategory);
-        category.setText(shop.getCategories());
+        TextView category = v.findViewById(R.id.labelProdcutCategory);
+        category.setText(product.getCategoria());
 
-        TextView ratingNum = v.findViewById(R.id.labelSearchShopNumRatings);
-        ratingNum.setText("("+shop.getRatingNum()+")");
-
-        RatingBar ratingAVG = v.findViewById(R.id.ratingBarSearchShop2);
-        ratingAVG.setRating(shop.getRatingAverage());
+        TextView price = v.findViewById(R.id.labelPriceProduct);
+        price.setText(product.getPrecio()+" €");
 
         return v;
     }
 }
-

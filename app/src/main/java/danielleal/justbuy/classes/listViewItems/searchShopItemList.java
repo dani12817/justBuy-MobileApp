@@ -10,6 +10,9 @@ public class searchShopItemList {
     byte[] logo;
     double latitude,longitude;
 
+    String categories=""; int ratingNum=0;
+    float ratingAVG=0;
+
     public searchShopItemList(int idShop, String name, byte[] logo, String description, String phone, double latitude, double longitude, String addressLine1, String addressLine2, String ZIP) {
         this.idShop = idShop;
         this.name = name;
@@ -62,4 +65,16 @@ public class searchShopItemList {
     public double getLongitude() {return longitude;}
 
     public void setLongitude(double longitude) {this.longitude = longitude;}
+
+    public String getCategories() {return categories;}
+
+    public void setCategories(String categories) {this.categories += categories+" ";}
+
+    public float getRatingAverage() {return ratingAVG;}
+
+    public void setRatingAverage(float ratingAverage) {this.ratingAVG = ratingAverage;}
+
+    public int getRatingNum() {return ratingNum;}
+
+    public void setRatingNum(int ratingNum) {this.ratingNum = ratingNum;}
 }
